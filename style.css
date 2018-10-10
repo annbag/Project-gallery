@@ -5,6 +5,7 @@
 }
 body {
 	font-family: 'Oswald', sans-serif;
+	overflow-x: hidden;
 }
 .gallery {
 	position: relative;
@@ -12,10 +13,10 @@ body {
 }
 .gallery .title {
 	position: absolute;
-	top: 95%;
+	top: 50%;
 	left: 5%;
 	transform-origin: 0 0;
-	transform: rotate(-90deg);
+	transform: rotate(-90deg) translateX(-50%);
 }
 .gallery h1 {
 	font-size: 60px;
@@ -23,6 +24,7 @@ body {
 	background-color: #111;
 	padding: 10px 20px;
 	margin-bottom: 15px;
+	text-align: center;
 }
 .gallery .images {
 	display: flex;
@@ -43,7 +45,6 @@ body {
 	overflow: hidden;
 	box-shadow: 0 0 3px 3px grey;
 }
-
 img {
 	position: absolute;
 	top: 50%;
@@ -51,4 +52,27 @@ img {
 	transform: translate(-50%, -50%);
 	min-width: 100%;
 	min-height: 100%;
+}
+@media(max-width: 768px) {
+	.gallery .title {		
+		top: 0;
+		left: 0;
+		right: 0;
+		transform: none;
+	}
+	.gallery h1 {
+		font-size: 30px;		
+		padding: 0;
+		margin-bottom: 0;
+	}
+	.gallery .images {			
+		top: 140px;
+		bottom: 5px;
+		right: 5px;
+		left: 5px;
+	}
+	.gallery a {
+		flex-basis: calc(50% - 40px);
+		margin: 20px 20px;
+	}	
 }
